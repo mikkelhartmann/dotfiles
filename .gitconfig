@@ -9,3 +9,5 @@
 [user]
 	name = Mikkel Hartmann Jensen
 	email = mikkelheart@gmail.com
+[commit]
+	template = /Users/hartmann/.stCommitMsg
