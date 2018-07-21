@@ -9,6 +9,11 @@ img {
   margin: auto;
 }
 
+div.output_area .rendered_html img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1 {
   text-align: left;
 }
@@ -28,6 +33,7 @@ canvas {
 
 .container {
   width: 50% !important;
+  min-width: 750px;
 }
 
 div.cell.selected {
@@ -47,5 +53,5 @@ div.output_scroll {
 /* Remove the toolbar that result from using  matplotlib notebook magic*/
 .output_wrapper button.btn.btn-default,
 .output_wrapper .ui-dialog-titlebar {
-    display: none
+  display: none;
 }
