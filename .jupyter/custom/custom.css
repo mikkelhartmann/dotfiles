@@ -14,6 +14,16 @@ div.output_area .rendered_html img {
   margin-right: auto;
 }
 
+div#margin-figure {
+  position: absolute;
+  transform: translate(680px, -100px);
+  padding-left: 1em;
+}
+
+div#margin-figure .output_prompt {
+  opacity: 0;
+}
+
 h1 {
   text-align: left;
 }
@@ -31,9 +41,10 @@ canvas {
   margin: auto;
 }
 
-.container {
-  width: 50% !important;
-  min-width: 750px;
+#notebook-container {
+  width: 40%;
+  min-width: 800px;
+  max-width: 960px;
 }
 
 div.cell.selected {
@@ -41,9 +52,9 @@ div.cell.selected {
 }
 
 div.text_cell_render {
-  width: 70%;
+  width: 80%;
   text-align: justify;
-  margin: 0 auto;
+  margin-left: 5%;
 }
 
 div.output_scroll {
@@ -54,4 +65,29 @@ div.output_scroll {
 .output_wrapper button.btn.btn-default,
 .output_wrapper .ui-dialog-titlebar {
   display: none;
+}
+
+div.output_area .rendered_html table {
+  margin: auto;
+  border: none;
+  font-size: 0.8em;
+}
+
+tr:nth-child(even) {
+  background: rgb(238, 238, 238);
+}
+tr:nth-child(odd) {
+  background: #fff;
+}
+
+.rendered_html tr,
+.rendered_html th,
+.rendered_html td {
+  border: none;
+  text-align: right;
+  padding: 2px 1px 1px 2px;
+}
+
+.rendered_html tr:hover {
+  background: rgb(250, 173, 173);
 }
