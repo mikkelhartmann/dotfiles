@@ -85,7 +85,7 @@ tr:nth-child(odd) {
 .rendered_html td {
   border: none;
   text-align: right;
-  padding: 2px 1px 1px 2px;
+  padding: 10px 1px 1px 10px;
 }
 
 .rendered_html tr:hover {
