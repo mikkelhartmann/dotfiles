@@ -1,0 +1,136 @@
+// UI Scale
+@base-font-size: 20;
+@ui-scale: @user-font-size / @base-font-size;
+
+// UI Colors
+@tint-color: grey;
+@handle-color: white;
+@collapsed-color: red;
+@selection-color: mix(@tint-color, @background-color, 15%);
+@today-color: mix(white, @background-color, 15%);
+@now-color: mix(orange, @background-color, 15%);
+@next-color: mix(grey, @background-color, 15%);
+@invisibles-color: mix(@tint-color, @background-color, 70%);
+@project-color: #8f5157;
+
+// Base text
+@text-color: #82d1f0;
+@background-color: #263238;
+@font-family: Muli;
+@line-height-multiple: 1.2;
+
+editor {
+  color: @text-color;
+  font-size: @user-font-size;
+  font-family: @font-family;
+  background-color: @background-color;
+  line-height-multiple: @line-height-multiple;
+
+  item-indent: 20px * @ui-scale;
+  caret-width: 2px;
+  caret-color: @tint-color;
+  drop-indicator-color: @tint-color;
+  invisibles-color: @invisibles-color;
+  selection-background-color: @selection-color;
+  guide-line-color: @background-color;
+  message-color: mix(@text-color, @background-color, 50%);
+}
+
+sidebar {
+  search-item-prefix: ":: ";
+}
+
+item {
+  handle-color: mix(@handle-color, @background-color, 10%);
+}
+
+item[collapsed] {
+  handle-color: @collapsed-color;
+}
+
+item[data-type="note"] {
+  font-style: normal;
+  color: darkgreen;
+  handle-color: lightgrey;
+}
+
+item[empty] {
+  handle-color: none;
+  handle-border-color: none;
+}
+
+item[data-type="task"] {
+  font-style: normal;
+}
+
+item[data-type="project"] {
+  font-weight: bold;
+  color: @project-color;
+}
+
+item[depth="1"].item[data-type="project"] {
+  font-size: @user-font-size*2;
+}
+
+item[depth="2"].item[data-type="project"] {
+  font-size: @user-font-size*1.2;
+}
+
+item[data-done] {
+  > run[content] {
+    text-strikethrough: NSUnderlineStyleSingle;
+    text-strikethrough-color: red;
+    color: grey;
+  }
+}
+
+item[data-now] {
+  > run[content] {
+    background-color: @now-color;
+  }
+}
+
+item[data-bug] {
+  > run[content] {
+    background-color: mix(red, @background-color, 12%);
+  }
+}
+
+item[data-today] {
+  > run[content] {
+    background-color: @today-color;
+  }
+}
+
+item[data-next] {
+  > run[content] {
+    background-color: @next-color;
+  }
+}
+
+item[data-inOmniFocus] {
+  > run[display] {
+    text-strikethrough: NSUnderlineStyleSingle;
+    text-strikethrough-color: @text-color;
+  }
+}
+
+run[link] {
+  cursor: pointer;
+  color: mix(blue, @background-color, 35%);
+}
+
+run[link^="button"] {
+  color: @text-color;
+}
+
+run[link^="filter"] {
+  color: blue;
+}
+
+run[tag] {
+  font-size: @user-font-size;
+  font-style: normal;
+  font-weight: normal;
+  color: mix(@text-color, @background-color, 50%);
+}
